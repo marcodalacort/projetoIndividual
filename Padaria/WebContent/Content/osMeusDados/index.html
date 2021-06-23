@@ -1,0 +1,75 @@
+<meta charset="UTF-8">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css"
+	rel="stylesheet">
+<script
+	src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+
+
+<script src="js/cadCategoria.js"></script>
+
+<link rel="stylesheet" href="css/insert.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/insert.js"></script>
+<h2>Categorias</h2>
+
+
+<div class="tab">
+	<button class="tablinks" onclick="openButton(event, 'insCat')">
+		<i class="fa fa-plus-circle" aria-hidden="true"></i> Cadastrar Categoria
+	</button>
+	<button class="tablinks" onclick="openButton(event, 'catCad')">
+		<i class="fa fa-list" aria-hidden="true"></i> Categorias Cadastradas
+	</button>
+</div>
+
+<div id="insCat" class="tabcontent">
+	<form name="frmAddCadCategoria" id="addCadCategoria" class="frmInserir">
+		<fieldset>
+			<legend>Cadastrar categoria</legend>
+			<table>
+				<tr>
+
+					<td><input type="text" class="categoria"
+						placeholder="Ex:Doces" name="categoria" id="categoria"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onclick="SENAI.cadCategoria.cadastrar()">Cadastrar</button>
+						<button type="reset">Limpar</button>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</div>
+
+<div id="catCad" class="tabcontent">
+	<form id="filtraCadCategoria" class="frmFiltrar">
+		<fieldset>
+			<legend>Filtrar</legend>
+			<input type="text" name="txtbusca" id="campoBusca"
+				onkeyup="SENAI.cadCategoria.buscar()"
+				placeholder="Pesquise pela nome">
+		</fieldset>
+	</form>
+	<div id="listaCabCat" class="listaRegistrosCad"></div>
+	<div id="listaCadCategoria" class="listaRegistrosCad"></div>
+	<div id="modalEditaCadCategoria" class="modalEditar">
+		<form name="frmEditaCadCategoria" id="editaCadCategoria"
+			class="frmEditar">
+			<table>
+				<tr>
+					<th>Nome</th>
+					<td><input type="text" name="categoria"></td>
+				</tr>
+
+			</table>
+			<input type="hidden" name="idCadCategoria">
+		</form>
+	</div>
+</div>

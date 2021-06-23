@@ -1,0 +1,54 @@
+<meta charset="UTF-8">
+<head>
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css"
+	rel="stylesheet">
+<script
+	src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+
+<script src="js/admin.js"></script>
+<script src="js/insert.js"></script>
+<link rel="stylesheet" href="css/insert.css">
+<script src="js/relatorio.js"></script>
+</head>
+<body>
+<h2>Relatório Vendas por Data</h2>
+
+
+<div>
+	<form name="frmRelatorioVendas" id="relatorioVendas" class="frmInserirVendas">
+	
+		
+		<fieldset>
+			<legend>Filtro Relatório Vendas</legend>
+			<table>
+				<tr>
+					<th>ID de Venda:</th>
+					<td><input type="text" name="txtbusca" id="campoBusca"
+								class="campoBusca" onkeyup="SENAI.relatorio.buscar()"
+								placeholder="Id de Venda">
+					</td>
+					<th>Data Inicial:</th>
+					<td><input type="datetime-local" class="dataI"
+						 name="datainicial" id="dataI" ></td>
+					<th>Data Final:</th>
+					<td><input type="datetime-local" class="dataF"
+						 name="datafinal" id="dataF" ></td>
+					<td colspan="2">
+						<button type="button" onclick="SENAI.relatorio.buscarData()">Filtrar Datas</button>
+					</td>
+					<td colspan="2">
+						<button type="button" onclick="SENAI.relatorio.gerarPDF()">Gerar PDF</button>
+					</td>
+				</tr>
+			</table>
+			
+		</fieldset>
+	</form>
+	<div id="listaCab" class="listaRegistros"></div>
+	<div id="listaRelatorio" class="listaRegistros"></div>
+</div>
+</body>

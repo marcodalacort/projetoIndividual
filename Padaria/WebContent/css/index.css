@@ -1,0 +1,314 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+header {
+	position: fixed;
+	background: #67AECA;/*#58AF9B;*/
+	padding: 20px;
+	width: 100%;
+	height: 30px;
+	webkit-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, .25);
+	moz-box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, .25);
+	box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, .25);
+}
+
+.left-area h3 {
+	color: #3a3a3a;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 22px;
+	font-weight: 900;
+}
+
+.left-area span {
+	color: white;
+}
+
+#nomeUs {
+	padding: 5px;
+	color: #3a3a3a;	
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 900;
+	float: right;
+	margin-top: -30px;
+	margin-right: 150px;
+}
+
+.logout_btn {
+	padding: 5px;
+	background: white;
+	text-decoration: none;
+	float: right;
+	margin-top: -30px;
+	margin-right: 40px;
+	border-radius: 2px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #2c2c2c;
+	transition: 0.5s;
+	transition-property: background;
+}
+
+.logout_btn:hover {
+	background: #2c2c2c;
+	color: white;
+}
+
+.sidebar {
+	background: #cacdd5;
+	margin-top: 70px;
+	padding-top: 30px;
+	position: fixed;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	transition: 0.5s;
+	transition-property: left;
+}
+
+.sidebar a {
+	color: #000000;
+	display: block;
+	width: 100%;
+	line-height: 60px;
+	text-decoration: none;
+	padding-left: 40px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	transition-property: background;
+}
+
+.sidebar a:hover {
+	background: #67AECA;/*#58AF9B;*/
+	color: white;
+}
+
+.sidebar i {
+	padding-right: 10px;
+}
+
+label #sidebar_btn {
+	z-index: 1;
+	color: white;
+	position: fixed;
+	cursor: pointer;
+	left: 250px;
+	font-size: 20px;
+	margin: 5px 0;
+	transition: 0.5s;
+	transition-property: color;
+}
+
+label #sidebar_btn:hover {
+	color: #2c2c2c;
+}
+
+#check:checked ~ .sidebar {
+	left: -190px;
+}
+
+#check:checked ~ .sidebar a span {
+	display: none;
+}
+
+#check:checked ~ .sidebar a {
+	font-size: 20px;
+	margin-left: 170px;
+	width: 80px;
+}
+
+.content {
+	margin-left: 250px;
+	transition: 0.5s; 
+	padding-top: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+#check:checked ~ .content {
+	margin-left: 60px;
+}
+
+#check {
+	display: none;
+}
+
+h2{
+	color:#67AECA/*#58AF9B*/
+}
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 14px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #67AECA/*#58AF9B*/;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+. tr,td,th{
+	border:1px solid #363636;
+	padding: 10px;
+}
+. tr,td{
+	font-size: 16px;
+}
+. tr:nth-child(even){
+	background-color: #363636;
+}
+. tr:nth-child(odd){
+	background-color:#b9b9b9;
+}
+/******* Tabela de registros ********/
+.listaRegistros, .listaRegistrosCad{
+	margin-bottom: 0px;
+}
+.listaRegistros table, .listaRegistrosCad table{
+	border:1px solid white;
+	border-collapse: collapse;
+	margin: 0 auto;
+	min-width:80%;
+}
+.listaRegistrosCad table{
+	border:1px solid white;
+	border-collapse: collapse;
+	margin: 0 auto;
+	min-width:30%;
+}
+.listaRegistros table th, .listaRegistrosCad table th{
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color:#fff;
+	padding: 10px 10px;
+	border: transparent;
+}
+
+.listaRegistros th, .listaRegistrosCad th{
+		background-color:#404040;
+}	
+.listaRegistros tr, .listaRegistros td, .listaRegistros th, .listaRegistrosCad tr, .listaRegistrosCad td, .listaRegistrosCad th{
+	border: 1px solid white;
+	padding: 10px 5px;
+}
+.listaRegistros tr, .listaRegistros td, .listaRegistrosCad tr, .listaRegistrosCad td{
+	text-align: center;
+	font-size: 14px;
+	font-family:sans-serif;
+	color:black;
+}
+
+.listaRedistros button, .listaRegistrosCad button{
+	background-color: #4CAF50;
+	padding: 10px 30px;
+}
+
+.listaRegistros tr:nth-child(even), .listaRegistrosCad tr:nth-child(even){
+	background-color:#d1d1d1;
+}
+.listaRegistros tr:nth-child(odd), .listaRegistrosCad tr:nth-child(odd){
+	background-color:#e4e4e4;
+}
+.listaRegistros .acoes, .listaRegistrosCad .acoes{
+	width:70px;
+}
+.listaRegistros .categ, .listaRegistrosCad .categ{
+	width:200px;
+}
+.listaRegistros .preco, .listaRegistrosCad .preco{
+	width:100px;
+}
+.listaRegistros .nome, .listaRegistrosCad .nome{
+	width:200px;
+}
+.listaRegistros .id, .listaRegistrosCad .id{
+	width:70px;
+}
+.listaRegistros .quant, .listaRegistrosCad .quant{
+	width:90px;
+}
+.listaRegistros .email, .listaRegistrosCad .email{
+	width:120px;
+}
+.listaRegistros .cargo, .listaRegistrosCad .cargo{
+	width:70px;
+}
+.listaRegistros .senha, .listaRegistrosCad .senha{
+	width:70px;
+}
+.listaRegistros table img, .listaRegistrosCad table img{
+	padding: 0 5px;
+	width:20px;
+	height:20px;
+	cursor: pointer;
+}
+#modalAviso, .modalEditar{
+	display:none;
+}
+/****** Formul�rio ******/
+.frmInserir, .frmFiltrar{
+	margin:0px auto;
+	margin-bottom: 10px;
+	text-align:left;
+}
+.frmInserir{
+	width:300px;
+}
+
+.frmFiltrar{
+	width: 350px;
+}
+#campoBusca{
+	width: 100%;
+}
+.frmInserir label{
+	width:200px;
+}
+.frmInserir input, .frmInserir textarea{
+	width:300px;
+	padding:2px 0;
+}
+.frmInserir textarea{
+	height: 100px;
+	resize: none;
+}
+.frmInserir button, .frmInserirProd button, .frmInserirVendas button, .frmFiltrar button{
+	width: 100px;
+	margin: 0 1%;
+	background-color: #67AECA/*#58AF9B*/;
+	color:white;
+	font-weight:bold;
+	font-size:16px;
+	float:right;
+}
+.frmInserir .aviso{
+	background-color:#ff0000;
+	color:#fff;
+	font-weight:bold;
+}

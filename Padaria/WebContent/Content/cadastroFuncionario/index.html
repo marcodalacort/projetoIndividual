@@ -1,0 +1,117 @@
+<meta charset="UTF-8">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css"
+	rel="stylesheet">
+<script
+	src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+<script src="js/limites.js"></script>
+<script src="js/funcionario.js"></script>
+<link rel="stylesheet" href="css/insert.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/insert.js"></script>
+<h2>Cadastro de funcionários</h2>
+
+<div class="tab">
+	<button class="tablinks" onclick="openButton(event, 'cadFun')"><i class="fa fa-plus-circle" aria-hidden="true"></i> Cadastrar funcionário</button>
+	<button class="tablinks" onclick="openButton(event, 'funCad')"><i class="fa fa-list" aria-hidden="true"></i> Funcionários cadastrados</button>
+</div>
+
+<div id="cadFun" class="tabcontent">
+	<form name="frmAddFuncionario" id="addFuncionario" class="frmInserir">
+		<fieldset>
+			<legend>Novo funcionario</legend>
+			<table>
+				<tr>
+					<th>Nome</th>
+					<td><input type="text" class="nomeFun" placeholder="Nome"
+						name="nome" id="nome"></td>
+				</tr>
+				<tr>
+					<th>Senha</th>
+					<td><input type="password" class="senhaFun"
+						placeholder="Senha" name="senhaFun" id="senhaFun"></td>
+				</tr>
+				<tr>
+					<th>Repita</th>
+					<td><input type="password" class="senhaRepFun"
+						placeholder="Senha" name="senhaRepFun" id="senhaRepFun"></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="email" name="email"
+						placeholder="nome@email.com" name="email" id="email"></td>
+				</tr>
+				<tr>
+					<th>Cargo:</th>
+					<td><select name="cargoId" id="selCargo">
+							<option value="." class="buscando">Aguarde, buscando
+								cargos...</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onclick="validaCampos()">Cadastrar</button>
+						<button type="reset">Limpar</button>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</div>
+
+<div id="funCad" class="tabcontent">
+	<form id="filtraFuncionarios" class="frmFiltrar">
+		<fieldset>
+			<legend>Filtrar</legend>
+			<input type="text" name="txtbusca" id="campoBusca" onkeyup="SENAI.funcionario.buscar()"
+				placeholder="Pesquise pelo nome">
+		</fieldset>
+	</form>
+	<div id="listaCab" class="listaRegistros"></div>
+	<div id="listaFuncionarios" class="listaRegistros"></div>
+	<div id="modalEditaFuncionario" class="modalEditar">
+		<form name="frmEditaFuncionario" id="editaFuncionario"
+			class="frmEditar">
+			<table>
+				<tr>
+					<th>Nome</th>
+					<td><input type="text" name="nome"></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+					<th>Cargo:</th>
+					<td><select name="cargoId" id="selCargoEditar">
+							<option value="." class="buscando">Aguarde, buscando
+								cargos...</option>
+					</select></td>
+				</tr>
+			</table>
+			<input type="hidden" name="idFuncionario">
+		</form>
+	</div>
+	<div id="modalEditaFuncionarioSenha" class="modalEditar">
+		<form name="frmEditaFuncionarioSenha" id="editaFuncionarioSenha"
+			class="frmEditar">
+			<table>
+				<tr>
+					<th>Nova Senha</th>
+					<td><input type="password" name="senhaNova"></td>
+				</tr>
+				<tr>
+					<th>Repete a senha</th>
+					<td><input type="password" name="senhaRep"></td>
+				</tr>
+			</table>
+			<input type="hidden" name="idFuncionarioSenha">
+		</form>
+	</div>
+</div>
+<div id="modalAviso"></div>
+

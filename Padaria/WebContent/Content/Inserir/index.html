@@ -1,0 +1,105 @@
+<meta charset="UTF-8">
+<link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma/bulma.css"
+	rel="stylesheet">
+<script
+	src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+	crossorigin="anonymous"></script>
+
+
+<script src="js/produtos.js"></script>
+
+<link rel="stylesheet" href="css/insert.css">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/insert.js"></script>
+<h2>Produtos</h2>
+
+
+<div class="tab">
+	<button class="tablinks" onclick="openButton(event, 'insQtd')">
+		<i class="fa fa-plus-circle" aria-hidden="true"></i> Cadastro Produtos
+	</button>
+	<button class="tablinks" onclick="openButton(event, 'verH')">
+		<i class="fa fa-list" aria-hidden="true"></i> Produtos Cadastrados
+	</button>
+</div>
+
+<div id="insQtd" class="tabcontent">
+	<form name="frmCadProdutos" id="addCadProdutos"
+		class=frmInserir>
+		<fieldset>
+			<legend>Cadastro de Produtos: </legend>
+			<table>
+				<tr>
+					<th><label for="nome">Nome:</label></th>
+					<td><input type="text" name="nome" id="nome"></td>
+				</tr>
+				<tr>
+					<th><label for="preco">Preço:</label></th>
+					<td><input type="number" name="preco" id="preco"></td>
+				</tr>
+				<tr>
+					<th><label for="quantidade">Quantidade:</label></th>
+					<td><input type="number" name="quantidade" id="quantidade"></td>
+				</tr>
+				<tr>
+
+					<th>Categoria:</th>
+					<td><select name="categoriaId" id="selCategoria">
+							<option value="." class="buscando">Aguarde, buscando
+								categorias...</option>
+					</select></td>
+
+				</tr>
+				<tr>
+					<td colspan="4">
+						<button type="button"  onclick="SENAI.produtos.cadastrar()">Cadastrar</button>
+						<button type="reset">Limpar</button>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</div>
+<div id="verH" class="tabcontent">
+	<form id="filtraProdutos" class="frmFiltrar">
+		<fieldset>
+			<legend>Filtrar</legend>
+			<input type="text" name="txtbusca" id="campoBusca" onkeyup="SENAI.produtos.buscar()"
+				placeholder="Pesquise pelo produto">
+		</fieldset>
+	</form>
+	
+	<div id="listaCab" class="listaRegistros"></div>
+	<div id="listaProdutos" class="listaRegistros"></div>
+	<div id="modalEditaProdutos" class="modalEditar">
+		<form name="frmEditaCadProdutos" id="editaProdutos"
+			class="frmEditar">
+			<table>
+				<tr>
+					<th><label for="nome">Nome:</label></th>
+					<td><input type="text" name="nome"></td>
+				</tr>
+				<tr>
+					<th><label for="preco">Preço:</label></th>
+					<td><input type="number" name="preco"></td>
+				</tr>
+				<tr>
+					<th><label for="quantidade">Quantidade:</label></th>
+					<td><input type="number" name="quantidade"></td>
+				</tr>
+				<tr>
+					<th>Categoria:</th>
+					<td><select name="categoriaId" id="categoriaEdicao">
+							<option value="." class="buscando">Aguarde, buscando
+								categorias...</option>
+					</select></td>
+				</tr>
+			</table>
+			<input type="hidden" name="idProdutos">
+		</form>
+	</div>
+</div>

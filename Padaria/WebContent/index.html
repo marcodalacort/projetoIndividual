@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">    
+             <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4/bootstrap-4.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>  
+       <script src="js/admin.js"></script>
+       <script src="js/login.js"></script>
+       <script src="js/cripto.js"></script>
+       <script src="js/jquery-ui.js"></script>
+       <link rel="stylesheet" href="css/style.css">
+       
+<script src="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"></script>
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+       
+      
+</head>
+<body>
+    <div class="container">
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem vindo !</h2>
+                <p class="description description-primary">Sistema PADARIA</p>
+                <p class="description description-primary">Já tem acesso? Acesse a tela de login</p>
+                <button id="signup" class="btn btn-primary">Tela de Login</button>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Crie sua conta</h2>
+                
+                
+                <form class="form" name="frmGerente" onsubmit="return validaCamposLogin()">
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" name="nome" placeholder="Nome">
+                    </label>
+                                 
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" name="senha" id="senhaCad" placeholder="Senha">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-envelope icon-modify"></i>
+                        <input type="email" name="email" placeholder="Email">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="number" name="cargo" id="cargo" placeholder="Cargo">
+                    </label>
+                    
+                    <button class="btn btn-second" onclick="validaCamposLogin(), SENAI.funcionario.cadastrar()">Cadastrar</button>       
+                </form>
+            </div><!-- second column -->
+        </div><!-- first content -->
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem Vindo</h2>
+                <p class="description description-primary">Digite suas informações</p>
+               <!--  <p class="description description-primary">Não é cadastrado? Clique em cadastrar</p>  -->
+               <!--  <button id="signin" class="btn btn-primary">Cadastrar</button> -->
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">FAÇA O LOGIN</h2>
+                
+                <form class="form" action="Servlet1" name="formul"  onsubmit="return validaCampos()">
+                
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="exampleInputEmail" name="userid" placeholder="Email">
+                    </label>
+                
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" name="password" id="pass" placeholder="Senha">
+                    </label>
+                
+                  
+                    <button class="btn btn-second">Entrar</button>
+                </form>
+            </div><!-- second column -->
+        </div><!-- second-content -->
+    </div>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
